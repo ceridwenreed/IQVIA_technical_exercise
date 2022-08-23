@@ -8,6 +8,7 @@
 ## 1. EDA:
 
 Violin plots for individual features against patient labels (1) no cancer, (2) cancer.
+
 ![alt text](/images/violin.png)
 
 ### Agreggated statistics
@@ -55,7 +56,7 @@ High blood glucose levels are correlated to higher age groups, the highest recor
 
 There is a threshold age range (40-50 years old) above which the chances of a patient getting cancer is much more likely. This is in concurrence with current breast cancer trends.
 
-Plot for patients with cancer only:
+Plot for patients with cancer only for below 50 years old (0) and above 50 years old (1):
 
 ![alt text](/images/hist_BMI_age.png)
 
@@ -73,9 +74,9 @@ The objective of classifying the cancer status of a patient is difficult and wil
 
 - History of breast cancer: A woman who has had breast cancer in one breast is at an increased risk of developing cancer in her other breast.
 
-- Family history of breast cancer: A woman has a higher risk of breast cancer if her mother, sister or daughter had breast cancer, especially at a young age (before 40). 
+- Family history of breast cancer: A woman has a higher risk of breast cancer if her relatives have had breast cancer, especially at a young age (before 40). 
 
-- Genetic factors: Women with certain genetic mutations, including changes to the BRCA1 and BRCA2 genes, are at higher risk of developing breast cancer during their lifetime.
+- Genetic factors: Women with certain genetic mutations are at higher risk of developing breast cancer during their lifetime.
 
 - Childbearing and menstrual history: The older a woman is when she has her first child, the greater her risk of breast cancer.
 
@@ -111,7 +112,7 @@ We will assess 5 different types of models based on initial accuracy scores:
 - Gradient Boost
 - XGBoost
 
-#### Change in test_size parameter has a large impact on model scores
+#### Change in test_size parameter has a large impact on model scores:
 
 Train-test split proportion graph for Logistic Regression:
 
@@ -119,7 +120,7 @@ Train-test split proportion graph for Logistic Regression:
 
 Train-test sample size plots for the models show large variations in mean squared error (mse) values - ideally mse should decrease as training set becomes larger.  
 
-#### Accuracy scores
+#### Accuracy scores:
 
 After tuning the parameters of the models the accuracy scores are as follows:
 
@@ -127,15 +128,16 @@ After tuning the parameters of the models the accuracy scores are as follows:
 |---------:|--------------------:|--------------:|--------------:|---------------:|-----------:|
 | Accuracy |        73.33%       |     83.33%    |      80%      |       80%      |   73.33%   |
 
-####  Cross validation results are inconsistent
+####  Cross validation results are inconsistent:
 
 Accuracy score for K-fold, times series and blocking time series cross validation for Logistic Regression:
 
+|---------------------:|-------:|-------:|-------:|-------:|-------:|
 |               K-fold | 42.86% | 64.26% | 53.86% | 76.92% | 84.62% |
 |          Time Series | 72.73% | 36.36% | 72.72% | 72.73% | 45.45% |
 | Blocking Time series |   100% | 33.33% | 66.75% | 66.67% | 66.67% | 
 
-#### Variation in data shows why cross validation is inconsistent
+#### Variation in data shows why cross validation is inconsistent:
 
 Partial dependence plots are selected from the most important features from feature importance plots.
 
@@ -145,24 +147,26 @@ Partial dependence and ICE plots show a large variation in the data set - orange
 
 ![alt text](/images/partial_gbc.png)
 
-#### Learning curves show model fits
+#### Learning curves show model fits:
 
 ![alt text](/images/train_val_scores.png)
 
 Learning curves for ensemble models Random Forest, Gradient Boost and XGBoost show the models are overfitting on the training data - this makes it difficult to acccurately assess feature importance. 
 
-#### ROC curve comparison
+#### ROC curve comparison:
 
 ROC curve is an important metric for the performance, the bigger the area under the curve the higher the performance.
+
 ![alt text](/images/roc_plot.png)
 
 Decision tree model seems to be underfitting to the data.
 
-#### Confusion matrices
+#### Confusion matrices:
 
 It is more important for a model to correctly predict that a patient has cancer. The models show to be equally accurate for predicting cancer patients as they do prediciting non-cancer patients.
 
 |                     |      Prediction      |            |
+|--------------------:|---------------------:|-----------:|
 |                     | No Cancer |  Cancer  | True label |
 |--------------------:|----------:|---------:|-----------:|
 | Logistic Regression |    67%    |    33%   |  No Cancer |
