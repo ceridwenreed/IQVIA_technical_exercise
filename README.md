@@ -150,9 +150,9 @@ Partial dependence and ICE plots show a large variation in the data set - orange
 
 #### Learning curves show model fits:
 
-![alt text](/images/train_val_scores.png)
+![alt text](/images/learn_curve.png)
 
-Learning curves for ensemble models Random Forest, Gradient Boost and XGBoost show the models are overfitting on the training data - this makes it difficult to acccurately assess feature importance. 
+Learning curves for models Gradient Boost, XGBoost and Decision Tree show the models are overfitting on the training data - this makes it difficult to acccurately assess feature importance. 
 
 #### ROC curve comparison:
 
@@ -160,7 +160,7 @@ ROC curve is an important metric for the performance, the bigger the area under 
 
 ![alt text](/images/roc_plot.png)
 
-Decision tree model seems to be underfitting to the data.
+Decision tree model is not performing as well as the other models
 
 #### Confusion matrices:
 
@@ -194,6 +194,8 @@ It is more important for a model to correctly predict that a patient has cancer.
 
     (b) Variations in the data have a larger effect on models ability to generalise.
 
+    (c) Difficult to assess model evaluation metrics accurately when the results are not consistent.
+
 #### 2. Need better features: 
 
     (a) Glucose is consitently an important feature in predicting if a patient has cancer or not.
@@ -202,9 +204,9 @@ It is more important for a model to correctly predict that a patient has cancer.
 
 #### 3. Models:
 
-    (a) Random Forest, Gradient Boost and XGBoost are overfitting on the training data - they wont be able to accurately predict on new data.
+    (a) Decision Tree, Gradient Boost and XGBoost are overfitting on the training data - they wont be able to accurately predict on new data.
 
-    (b) Logistic regression might perform better on new data. The confusion matrix shows it is better at predicting if a patient has cancer specifically, it is more generalised than Random Forest, Gradient Boost and XGBoost models and less underfit than Decision Tree.
+    (b) Logistic regression might perform better on new data. The confusion matrix shows it is better at predicting if a patient has cancer specifically, it may be more generalised than Decision Tree, Gradient Boost and XGBoost models.
 
 
 
