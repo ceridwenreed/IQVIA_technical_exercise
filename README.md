@@ -166,7 +166,7 @@ Decision tree model is not performing as well as the other models
 
 It is more important for a model to correctly predict that a patient has cancer. The models show to be equally accurate for predicting cancer patients as they do prediciting non-cancer patients.
 
-|                     |      Prediction      | True label |
+|                     | Prediction|Prediction| True label |
 |--------------------:|---------------------:|-----------:|
 |                     | No Cancer |  Cancer  |            |
 |                                                         |
