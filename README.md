@@ -132,10 +132,11 @@ After tuning the parameters of the models the accuracy scores are as follows:
 
 Accuracy score for K-fold, times series and blocking time series cross validation for Logistic Regression:
 
-|---------------------:|-------:|-------:|-------:|-------:|-------:|
-|               K-fold | 42.86% | 64.26% | 53.86% | 76.92% | 84.62% |
-|          Time Series | 72.73% | 36.36% | 72.72% | 72.73% | 45.45% |
-| Blocking Time series |   100% | 33.33% | 66.75% | 66.67% | 66.67% | 
+|  Cross validation technique |                  Accuracy                  |
+|----------------------------:|-------:|-------:|-------:|-------:|-------:|
+|            K-fold           | 42.86% | 64.26% | 53.86% | 76.92% | 84.62% |
+|          Time Series        | 72.73% | 36.36% | 72.72% | 72.73% | 45.45% |
+|     Blocking Time series    |   100% | 33.33% | 66.75% | 66.67% | 66.67% | 
 
 #### Variation in data shows why cross validation is inconsistent:
 
@@ -165,10 +166,10 @@ Decision tree model seems to be underfitting to the data.
 
 It is more important for a model to correctly predict that a patient has cancer. The models show to be equally accurate for predicting cancer patients as they do prediciting non-cancer patients.
 
-|                     |      Prediction      |            |
+|                     |      Prediction      | True label |
 |--------------------:|---------------------:|-----------:|
-|                     | No Cancer |  Cancer  | True label |
-|--------------------:|----------:|---------:|-----------:|
+|                     | No Cancer |  Cancer  |            |
+|                                                         |
 | Logistic Regression |    67%    |    33%   |  No Cancer |
 |                     |    23%    |    79%   |   Cancer   |
 |                                                         |
