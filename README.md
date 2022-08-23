@@ -1,11 +1,11 @@
 # IQVIA_technical_exercise
 
 ## Contents:
-#### 1. EDA
-#### 2. Model evaluation
-#### 3. Conclusion
+### 1. EDA
+### 2. Model evaluation
+### 3. Conclusion
 
-## 1. EDA:
+# 1. EDA:
 
 Violin plots for individual features against patient labels (1) no cancer, (2) cancer.
 
@@ -42,7 +42,7 @@ Violin plots for individual features against patient labels (1) no cancer, (2) c
 |   min | 24.000000 | 18.670000 | 151.000000 |  60.000000 |  2.707000 |  0.467409 |  4.311000 |    2.194280 |  3.291750 |   45.843000 |
 |   max | 89.000000 | 38.578759 | 194.000000 | 118.000000 | 26.211000 |  7.111918 | 83.482100 |   38.040000 | 82.100000 | 1256.083000 |
 
-Fasting blood levels:
+**Fasting blood levels:**
 - Glucose = 130 mg/dL
 - Insulin = 12 ulU/ml
 
@@ -83,7 +83,7 @@ The objective of classifying the cancer status of a patient is difficult and wil
 - Cancer label: status of the cancer the patients have is unknown. i.e. benign, malignant or in remission. These can determine the survivability of a patient. 
 
 
-## 2. Model evaluation
+# 2. Model evaluation
 
 ### Lasso regularization
 
@@ -102,7 +102,7 @@ The objective of classifying the cancer status of a patient is difficult and wil
 
 Lasso regression confirms that glucose has a stronger relevance in determining if a patient has cancer.
 
-### Models
+## Models
 
 We will assess 5 different types of models based on initial accuracy scores:
 
@@ -112,7 +112,7 @@ We will assess 5 different types of models based on initial accuracy scores:
 - Gradient Boost
 - XGBoost
 
-#### Change in test_size parameter has a large impact on model scores:
+### Change in test_size parameter has a large impact on model scores:
 
 Train-test split proportion graph for Logistic Regression:
 
@@ -120,7 +120,7 @@ Train-test split proportion graph for Logistic Regression:
 
 Train-test sample size plots for the models show large variations in mean squared error (mse) values - ideally mse should decrease as training set becomes larger.  
 
-#### Accuracy scores:
+### Accuracy scores:
 
 After tuning the parameters of the models the accuracy scores are as follows:
 
@@ -128,7 +128,7 @@ After tuning the parameters of the models the accuracy scores are as follows:
 |---------:|--------------------:|--------------:|--------------:|---------------:|-----------:|
 | Accuracy |        73.33%       |     83.33%    |      80%      |       80%      |   73.33%   |
 
-####  Cross validation results are inconsistent:
+###  Cross validation results are inconsistent:
 
 Accuracy score for K-fold, times series and blocking time series cross validation for Logistic Regression:
 
@@ -138,7 +138,7 @@ Accuracy score for K-fold, times series and blocking time series cross validatio
 |          Time Series        | 72.73% | 36.36% | 72.72% | 72.73% | 45.45% |
 |     Blocking Time series    |   100% | 33.33% | 66.75% | 66.67% | 66.67% | 
 
-#### Variation in data shows why cross validation is inconsistent:
+### Variation in data shows why cross validation is inconsistent:
 
 Partial dependence plots are selected from the most important features from feature importance plots.
 
@@ -148,13 +148,13 @@ Partial dependence and ICE plots show a large variation in the data set - orange
 
 ![alt text](/images/partial_gbc.png)
 
-#### Learning curves show model fits:
+### Learning curves show model fits:
 
 ![alt text](/images/learn_curve.png)
 
 Learning curves for models Gradient Boost, XGBoost and Decision Tree show the models are overfitting on the training data - this makes it difficult to acccurately assess feature importance. 
 
-#### ROC curve comparison:
+### ROC curve comparison:
 
 ROC curve is an important metric for the performance, the bigger the area under the curve the higher the performance.
 
@@ -162,7 +162,7 @@ ROC curve is an important metric for the performance, the bigger the area under 
 
 Decision tree model is not performing as well as the other models
 
-#### Confusion matrices:
+### Confusion matrices:
 
 It is more important for a model to correctly predict that a patient has cancer. The models show to be equally accurate for predicting cancer patients as they do prediciting non-cancer patients.
 
@@ -186,9 +186,9 @@ It is more important for a model to correctly predict that a patient has cancer.
 |                     |    23%    |    77%   |   Cancer   |
 
 
-## 3. Conclusions:
+# 3. Conclusions:
 
-#### 1. Sample size is too small:
+### 1. Sample size is too small:
 
 * This leads to inconsistent cross validation results.
 
@@ -196,13 +196,13 @@ It is more important for a model to correctly predict that a patient has cancer.
 
 * Difficult to assess model evaluation metrics accurately when the results are not consistent.
 
-#### 2. Need better features: 
+### 2. Need better features: 
 
 * Glucose is consitently an important feature in predicting if a patient has cancer or not.
 
 * Feature importance assessments from all 5 models are not consistent - we would expect some degree of consensus towards data generalisation. This is important if we want models to perform well on new, unseen data. 
 
-#### 3. Models:
+### 3. Models:
 
 * Decision Tree, Gradient Boost and XGBoost are overfitting on the training data - they wont be able to accurately predict on new data.
 
