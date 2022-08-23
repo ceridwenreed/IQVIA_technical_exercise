@@ -164,7 +164,7 @@ Decision tree model is not performing as well as the other models
 
 ### Confusion matrices:
 
-It is more important for a model to correctly predict that a patient has cancer. The models show to be equally accurate for predicting cancer patients as they do prediciting non-cancer patients.
+It is more important for a model to correctly predict that a patient has cancer. The models show to be slightly more accurate for predicting cancer patients compared to for when prediciting non-cancer patients.
 
 |                     | Prediction|Prediction| True label |
 |--------------------:|----------:|---------:|-----------:|
