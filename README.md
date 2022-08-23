@@ -190,23 +190,23 @@ It is more important for a model to correctly predict that a patient has cancer.
 
 #### 1. Sample size is too small:
 
-    (a) This leads to inconsistent cross validation results.
+    * This leads to inconsistent cross validation results.
 
-    (b) Variations in the data have a larger effect on models ability to generalise.
+    * Variations in the data have a larger effect on models ability to generalise.
 
-    (c) Difficult to assess model evaluation metrics accurately when the results are not consistent.
+    * Difficult to assess model evaluation metrics accurately when the results are not consistent.
 
 #### 2. Need better features: 
 
-    (a) Glucose is consitently an important feature in predicting if a patient has cancer or not.
+    * Glucose is consitently an important feature in predicting if a patient has cancer or not.
     
-    (b) Feature importance assessments from all 5 models are not consistent - we would expect some degree of consensus towards data generalisation. This is important if we want models to perform well on new, unseen data. 
+    * Feature importance assessments from all 5 models are not consistent - we would expect some degree of consensus towards data generalisation. This is important if we want models to perform well on new, unseen data. 
 
 #### 3. Models:
 
-    (a) Decision Tree, Gradient Boost and XGBoost are overfitting on the training data - they wont be able to accurately predict on new data.
+    * Decision Tree, Gradient Boost and XGBoost are overfitting on the training data - they wont be able to accurately predict on new data.
 
-    (b) Logistic regression might perform better on new data. The confusion matrix shows it is better at predicting if a patient has cancer specifically, it may be more generalised than Decision Tree, Gradient Boost and XGBoost models.
+    * Logistic regression might perform better on new data. The confusion matrix shows it is better at predicting if a patient has cancer specifically, it may be more generalised than Decision Tree, Gradient Boost and XGBoost models.
 
 
 
